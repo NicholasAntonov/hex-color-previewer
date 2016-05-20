@@ -1,4 +1,5 @@
-const hexRegex = /(#[0-9a-f]{6})/ig;
+const hexRegex = /#([0-9a-f]{3}){1,2}/ig;
+
 
 // Get all text nodes that have hex codes
 const textNodes = [];
