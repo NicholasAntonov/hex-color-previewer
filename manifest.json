@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Hex Color Previewer",
+  "description": "This extension shows a preview of hex colors inside web pages",
+  "version": "0.1",
+
+  "permissions": [
+    "*://*/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "css": ["hex.css"],
+      "js": ["hex.js"]
+    }
+  ]
+}
