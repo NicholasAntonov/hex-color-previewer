@@ -1,11 +1,17 @@
-const hexRegex = /([0-9a-f]{6})/ig;
+const hexRegex = /(#[0-9a-f]{6})/ig;
 
-// Get all text nodes
-const textNodes = []
+// Get all text nodes that have hex codes
+const textNodes = [];
 {
-    const walk = document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
+    const walk = document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
     let n;
     while(n = walk.nextNode()) {
-        a.push(n);
+        if (hexRegex.test(n.nodeValue)) {
+            textNodes.push(n);
+        }
     }
 }
+
+const nodes = textNodes.map(node => node.parentNode);
+
+nodes.forEach(node => node.innerHTML = node.innerHTML.replace(hexRegex, '<span="hex-color">$&</span>'));
