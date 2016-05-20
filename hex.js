@@ -14,4 +14,4 @@ const textNodes = [];
 
 const nodes = textNodes.map(node => node.parentNode);
 
-nodes.forEach(node => node.innerHTML = node.innerHTML.replace(hexRegex, '<span="hex-color">$&</span>'));
+nodes.forEach(node => node.innerHTML = node.innerHTML.replace(hexRegex, '<span class="hex-color">$&</span>'));
