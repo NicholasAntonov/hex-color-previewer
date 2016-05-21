@@ -1,6 +1,5 @@
 const hexRegex = /#([0-9a-f]{3}){1,2}/ig;
 
-
 // Get all text nodes that have hex codes
 const textNodes = [];
 {
@@ -13,8 +12,13 @@ const textNodes = [];
     }
 }
 
-// Wrap the hex code in a span
+// Get all parent nodes as it is the only way to wrap the hex
 const nodes = textNodes.map(node => node.parentNode);
+
+// This must all be on one line due to whitespace somtimes mattering in pages with <pre>
+const wrappedHTML ='<span class="hex-color"><div class="hex-color-preview"><div class="hex-color-square" style="background-color: $&"></div></div>$&</span>';
+
+// replace the hex with the wrapped version of the hex, containing a hiden div
 nodes.forEach(node => {
-    node.innerHTML = node.innerHTML.replace(hexRegex, '<span class="hex-color">$&</span>');
+    node.innerHTML = node.innerHTML.replace(hexRegex, wrappedHTML);
 });

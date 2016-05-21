@@ -1,0 +1,20 @@
+.hex-color > .hex-color-preview {
+    display: none;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 9001;
+
+    padding: 5px;
+    background-color: #121212;
+}
+
+.hex-color:hover > .hex-color-preview {
+    display: block;
+}
+
+.hex-color > .hex-color-preview > .hex-color-square {
+    width: 100%;
+    height: 100%;
+}
+
