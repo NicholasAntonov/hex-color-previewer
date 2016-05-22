@@ -2,8 +2,10 @@
     display: none;
     width: 150px;
     height: 150px;
-    position: absolute;
+    position: fixed;
     z-index: 9001;
+    bottom: 25px;
+    right: 25px;
 
     padding: 5px;
     background-color: #121212;
