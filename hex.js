@@ -16,7 +16,7 @@ const textNodes = [];
 const nodes = textNodes.map(node => node.parentNode);
 
 // This must all be on one line due to whitespace somtimes mattering in pages with <pre>
-const wrappedHTML ='<span class="hex-color"><div class="hex-color-preview"><div class="hex-color-square" style="background-color: $&"></div></div>$&</span>';
+const wrappedHTML ='<div class="hex-color" style="color: $&"><span style="background-color: $&"></span>$&</div>';
 
 // replace the hex with the wrapped version of the hex, containing a hiden div
 nodes.forEach(node => {

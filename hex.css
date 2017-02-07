@@ -1,22 +1,26 @@
-.hex-color > .hex-color-preview {
-    display: none;
-    width: 150px;
-    height: 150px;
-    position: fixed;
-    z-index: 9001;
-    bottom: 25px;
-    right: 25px;
-
-    padding: 5px;
-    background-color: #121212;
+.hex-color {
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 1px 1px #AAA;
 }
 
-.hex-color:hover > .hex-color-preview {
-    display: block;
+.hex-color:hover { cursor: help; }
+
+.hex-color span {
+    visibility: hidden;
+    height: 30px;
+    width: 120px;
+    top: -5px;
+    left: 110%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px #CCC;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
-.hex-color > .hex-color-preview > .hex-color-square {
-    width: 100%;
-    height: 100%;
+.hex-color:hover span {
+  visibility: visible;
+  opacity: 1;
 }
-
